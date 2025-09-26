@@ -22,7 +22,8 @@ def parse_time(time_str):
 
 def index(request):
     """Render the frontend page (index.html)"""
-    return render(request, "index.html")
+    # Pass available rooms to the template
+    return render(request, "index.html", {"rooms": rooms})
 
 @csrf_exempt  # for development only: avoids CSRF token handling
 def simulate_access(request):
@@ -119,7 +120,7 @@ def simulate_access(request):
                     "room": room,
                     "time": req_time_str,
                     "granted": False,
-                    "reason": f"Denied: Cooldown active (last at {last_access[key].strftime('%H:%M')}; need {rule['cooldown']} min)"
+                    "reason": f"Denied: Cooldown active (last at {last_access[key].strftime('%H:%M')}; After last access {rule['cooldown']} min not allowed)"
                 })
                 continue
 
