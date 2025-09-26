@@ -1,0 +1,20 @@
+# Python version (3.13 recommended)
+python_version == "3.13"
+
+# Django framework
+Django==5.1.2
+
+# Django REST Framework (for APIs)
+djangorestframework==3.15.2
+
+# Gunicorn (for production WSGI server)
+gunicorn==23.0.0
+
+# Whitenoise (for static file serving)
+whitenoise==6.7.0
+
+# psycopg2 (if using PostgreSQL, comment if not needed)
+psycopg2-binary==2.9.9
+
+# Pillow (for image processing, uploads)
+Pillow==10.4.0
